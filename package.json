@@ -1,15 +1,18 @@
 {
   "name": "@chakri-git-hub/test-tokens",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "test-text-colour-tokens",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf -rf dist && node-sass src/sass/theme -o dist/css/main --output-style compressed && node-sass src/sass/utils -o dist/css/utils --output-style compressed && npm run babel-compile && npx tsc && npm run move-assets"
   },
-  "repository":{
+  "repository": {
     "url": "https://github.com/chakri-git-hub/test-tokens"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.3.1"
+  }
 }
